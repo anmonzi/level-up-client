@@ -31,6 +31,7 @@ export const EventList = (props) => {
                                 })
                             }
                             @ {event.time}
+                        <div>Organized by: {event.organizer.user.first_name}</div>
                         </div>
                         <br></br>
                     </section>
