@@ -9,10 +9,7 @@ import { EventForm } from "./event/EventForm"
 
 export const ApplicationViews = () => {
     return <>
-        <main style={{
-            margin: "5rem 2rem",
-            backgroundColor: "lightgoldenrodyellow"
-        }}>
+        <main>
             <GameProvider>
                 <Route exact path="/games">
                     <GameList />

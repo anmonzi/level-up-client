@@ -1,11 +1,11 @@
-.gameList {
+.eventList {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
-.gameList-container {
+.eventList-container {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 0 20rem;
 }

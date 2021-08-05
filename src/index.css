@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+
 /*Typography
 --------------------------------------------------------------*/
 
@@ -9,6 +10,14 @@ body, button, input, select, textarea {
     line-height: 1.5;
     padding: 0;
     margin: 0;
+}
+
+body {
+	background-image: url(game.jpg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	
 }
 
 h1, h2, h3, h4, h5, h6 {
