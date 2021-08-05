@@ -15,11 +15,24 @@ export const EventProvider = (props) => {
         .then(setEvents)
     }
 
+    const createEvent = eventObj => {
+        return fetch("http://localhost:8000/events", {
+            method: "POST",
+            headers:{
+                "Content-Type": "application/json",
+                "Authorization": `Token ${localStorage.getItem("lu_token")}`
+            },
+            body: JSON.stringify(eventObj)
+        })
+        .then(getEvents)
+        .then()
+    }
+
 
     return (
         <EventContext.Provider value={
             {
-                events, getEvents
+                events, getEvents, createEvent
             }
         }>
             {props.children}
