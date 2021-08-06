@@ -7,5 +7,38 @@
 
 .eventList-container {
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 0 20rem;
+    padding: 0 8rem;
+    border-radius: 7rem;
+    margin-bottom: 5rem;
+}
+
+.eventForm {
+    max-width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.eventForm-flex {
+    flex-basis: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0 5rem;
+    border-radius: 7rem;
+}
+
+.events__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.registration {
+    background-color: rgba(255, 255, 255);
+    padding: 2rem 0 2rem 2rem;
+    border-radius: 7rem;
+    text-align: center;
+}
+
+.registration__game {
+    font-size: 1.5rem;
 }

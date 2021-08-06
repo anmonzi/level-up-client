@@ -7,5 +7,32 @@
 
 .gameList-container {
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 0 20rem;
+    padding: 0 8rem;
+    border-radius: 7rem;
+}
+
+.gameForm {
+    max-width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    
+}
+
+.gameForm-flex {
+    flex-basis: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0 5rem;
+    border-radius: 7rem;
+}
+
+.game {
+    background-color: rgba(255, 255, 255);
+    padding: 2rem 2rem 2rem 2rem;
+    border-radius: 7rem;
+    text-align: center;
+}
+
+.game__title {
+    font-size: 1.5rem;
 }
