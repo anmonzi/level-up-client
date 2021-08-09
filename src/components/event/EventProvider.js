@@ -46,7 +46,6 @@ export const EventProvider = (props) => {
                 "Authorization": `Token ${localStorage.getItem("lu_token")}`
             }
         })
-        .then(res => res.json())
         .then(getEvents)
     }
 

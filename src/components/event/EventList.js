@@ -5,12 +5,11 @@ import "./Event.css"
 
 export const EventList = (props) => {
     const { events, getEvents, joinEvent, leaveEvent } = useContext(EventContext)
-    const [joined, setJoined] = useState(false)
     const history = useHistory()
 
     useEffect(() => {
         getEvents()
-    },[joined])
+    },[])
 
 
     return (
@@ -44,16 +43,15 @@ export const EventList = (props) => {
                       day: "numeric",
                     })}
                     @ {event.time}
-                    <div>Organized by: {event.organizer.user.first_name}</div>
                   </div>
+                  <div>Organized by: {event.organizer.user.first_name}</div>
                   {
                     event.joined
                       ? <button className="btn btn-3"
-                        onClick={() => { leaveEvent(event.id); setJoined(false) }}>Leave</button>
+                        onClick={() =>  leaveEvent(event.id)}>Leave</button>
                       : <button className="btn btn-2"
-                        onClick={() => { joinEvent(event.id); setJoined(true)}}>Join</button>
+                        onClick={() =>  joinEvent(event.id)}>Join</button>
                   }
-                  
                 </section>
                 <br></br>
               </>)
