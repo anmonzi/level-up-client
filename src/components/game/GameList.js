@@ -4,7 +4,7 @@ import { GameContext } from './GameProvider'
 import "./Game.css"
 
 export const GameList = (props) => {
-    const { games, getGames } = useContext(GameContext)
+    const { games, getGames, deleteGame } = useContext(GameContext)
     const history = useHistory()
 
     useEffect(() => {
@@ -35,6 +35,8 @@ export const GameList = (props) => {
                                 <div className="game__edit">
                                     <button className="btn btn-3"
                                     onClick={() => history.push(`/games/${game.id}/edit`) }>Edit</button>
+                                    <button className="btn btn-4"
+                                    onClick={() => deleteGame(game.id) }>Delete</button>
                                 </div>
                                 </section>
                                 <br></br>
