@@ -11,7 +11,7 @@ export const GameList = (props) => {
         getGames()
     }, [])
 
-    console.log(games)
+    
     return (
         <>
             <div className="gameList">

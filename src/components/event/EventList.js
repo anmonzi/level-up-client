@@ -4,7 +4,7 @@ import { EventContext } from './EventProvider'
 import "./Event.css"
 
 export const EventList = (props) => {
-    const { events, getEvents } = useContext(EventContext)
+    const { events, getEvents, joinEvent } = useContext(EventContext)
     const history = useHistory()
 
     useEffect(() => {
@@ -28,7 +28,9 @@ export const EventList = (props) => {
               </button>
             </header>
             <br></br>
-            {events.map((event) => (
+            {events.map(event => {
+              // const attending = profile.events.some(evt => evt.id === event.id)
+              return (
               <>
                 <section key={event.id} className="registration">
                   <div className="registration__game">{event.game.title}</div>
@@ -44,10 +46,12 @@ export const EventList = (props) => {
                     @ {event.time}
                     <div>Organized by: {event.organizer.user.first_name}</div>
                   </div>
+                  <button className="btn btn-2"
+                      onClick={() => joinEvent(event.id)}>Join</button>
                 </section>
                 <br></br>
-              </>
-            ))}
+              </>)
+            })}
           </article>
         </div>
       </div>
