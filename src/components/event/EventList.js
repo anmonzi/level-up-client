@@ -1,15 +1,16 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import { EventContext } from './EventProvider'
 import "./Event.css"
 
 export const EventList = (props) => {
-    const { events, getEvents, joinEvent } = useContext(EventContext)
+    const { events, getEvents, joinEvent, leaveEvent } = useContext(EventContext)
+    const [joined, setJoined] = useState(false)
     const history = useHistory()
 
     useEffect(() => {
         getEvents()
-    },[])
+    },[joined])
 
 
     return (
@@ -29,7 +30,6 @@ export const EventList = (props) => {
             </header>
             <br></br>
             {events.map(event => {
-              // const attending = profile.events.some(evt => evt.id === event.id)
               return (
               <>
                 <section key={event.id} className="registration">
@@ -46,8 +46,14 @@ export const EventList = (props) => {
                     @ {event.time}
                     <div>Organized by: {event.organizer.user.first_name}</div>
                   </div>
-                  <button className="btn btn-2"
-                      onClick={() => joinEvent(event.id)}>Join</button>
+                  {
+                    event.joined
+                      ? <button className="btn btn-3"
+                        onClick={() => { leaveEvent(event.id); setJoined(false) }}>Leave</button>
+                      : <button className="btn btn-2"
+                        onClick={() => { joinEvent(event.id); setJoined(true)}}>Join</button>
+                  }
+                  
                 </section>
                 <br></br>
               </>)
