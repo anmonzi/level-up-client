@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import { EventContext } from './EventProvider'
 import "./Event.css"
+import marioyoshi from '../game/marioyoshi.png'
 
 export const EventList = (props) => {
     const { events, getEvents, joinEvent, leaveEvent } = useContext(EventContext)
@@ -58,6 +59,7 @@ export const EventList = (props) => {
             })}
           </article>
         </div>
+        <img src={marioyoshi} className="mario-flex-right"/>
       </div>
     );
 }

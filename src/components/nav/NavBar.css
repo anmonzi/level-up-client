@@ -2,7 +2,8 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
-    margin-top: 3rem;
+    align-items: center;
+    margin: 2rem 0 4rem 0;
 }
 
 .navbar__item {
@@ -12,10 +13,9 @@
 .nav-link {
     background-image: url("../../brick.png");
     background-size: contain;
-    padding: 30px 20px;
+    padding: 40px 15px;
     color: white;
     text-decoration: none;
-    font-size: 1.5rem;
 }
 
 .navbar__item:hover {

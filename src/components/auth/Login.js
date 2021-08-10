@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import "./Auth.css"
+import mario from "./mario.png"
 
 
 export const Login = props => {
@@ -44,14 +45,19 @@ export const Login = props => {
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1>Level Up</h1>
                     <h2>Please sign in</h2>
-                    <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
-                        <input ref={email} type="email" id="email" className="form-control"  placeholder="Email address" required autoFocus />
-                    </fieldset>
-                    <fieldset>
-                        <label htmlFor="inputPassword"> Password </label>
-                        <input ref={password} type="password" id="password" className="form-control"  placeholder="Password" required />
-                    </fieldset>
+                    <div className="form--login--flex">
+                        <div>
+                            <fieldset>
+                                <label htmlFor="inputEmail"> Email address </label>
+                                <input ref={email} type="email" id="email" className="form-control"  placeholder="Email address" required autoFocus />
+                            </fieldset>
+                            <fieldset>
+                                <label htmlFor="inputPassword"> Password </label>
+                                <input ref={password} type="password" id="password" className="form-control"  placeholder="Password" required />
+                            </fieldset>
+                        </div>
+                        <img src={mario} className="mario"/>
+                    </div>
                     <fieldset style={{
                         textAlign:"center"
                     }}>

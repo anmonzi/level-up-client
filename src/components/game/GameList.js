@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { useHistory } from 'react-router'
 import { GameContext } from './GameProvider'
 import "./Game.css"
+import marioyoshi from "./marioyoshi.png"
 
 export const GameList = (props) => {
     const { games, getGames, deleteGame } = useContext(GameContext)
@@ -46,6 +47,7 @@ export const GameList = (props) => {
                     </article>
                 </div>
             </div>
+            <img src={marioyoshi} className="mario-flex-right"/>
         </>
     )
 }
