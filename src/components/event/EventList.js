@@ -45,6 +45,14 @@ export const EventList = (props) => {
                     })} @ {event.time}
                   </div>
                   <div>Organized by: {event.organizer.user.first_name}</div>
+                  <br></br>
+                  <div>
+                    {
+                      event.attendees_count === 1
+                      ? <div>{event.attendees_count} Person attending</div>
+                      : <div>{event.attendees_count} People attending</div>
+                    }
+                  </div>
                   {
                     event.joined
                       ? <button className="btn btn-3"
