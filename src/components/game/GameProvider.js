@@ -5,6 +5,7 @@ export const GameContext = createContext()
 export const GameProvider = (props) => {
     const [games, setGames] = useState([])
     const [gameTypes, setGameTypes] = useState([])
+    const [searchTerms, setSearchTerms] = useState("")
 
     const getGames = () => {
         return fetch("http://localhost:8000/games", {
@@ -76,7 +77,7 @@ export const GameProvider = (props) => {
             {
                 games, getGames, gameTypes,
                 getGameTypes, createGame, editGame,
-                getGameById, deleteGame
+                getGameById, deleteGame, searchTerms, setSearchTerms
             }
         }>
             {props.children}

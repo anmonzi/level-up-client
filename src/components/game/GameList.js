@@ -1,17 +1,28 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import { GameContext } from './GameProvider'
+import { GameSearch } from './GameSearch'
 import "./Game.css"
 import marioyoshi from "./marioyoshi.png"
 
 export const GameList = (props) => {
-    const { games, getGames, deleteGame } = useContext(GameContext)
+    const { games, getGames, deleteGame, searchTerms, setSearchTerms } = useContext(GameContext)
+    const [filteredGames, setFilteredGames] = useState([])
     const history = useHistory()
-    const currentUser = localStorage.getItem("lu_token") // can we even do this still?
+    
 
     useEffect(() => {
         getGames()
     }, [])
+
+    useEffect(() => {
+        if (searchTerms !== "") {
+            const search = games.filter(game => game.title.toLowerCase().includes(searchTerms))
+            setFilteredGames(search)
+        } else {
+            setFilteredGames(games)
+        }
+    }, [searchTerms, games])
 
     
     return (
@@ -26,9 +37,11 @@ export const GameList = (props) => {
                             }}>Register New Game</button>
                     </header>
                     <br></br>
+                    <GameSearch />
+                    <br></br>
                     <article className="games">
                         {
-                            games.map(game => 
+                            filteredGames.map(game => 
                                 <>
                                 <section key={`game--${game.id}`} className="game">
                                     <div className="game__title">{game.title}</div>
