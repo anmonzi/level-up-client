@@ -6,14 +6,18 @@
 }
 
 .profile-container {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 0 8rem 3rem 8rem;
     border-radius: 7rem;
     margin-bottom: 5rem;
 }
 
 .profile__info {
-    background: gold;
-    border-radius: 5rem;
-    padding: 0 3rem;
+    background: rgb(249, 214, 15);
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+}
+
+.profile__header > h3 {
+    margin-top: 0;
 }

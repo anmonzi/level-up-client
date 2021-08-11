@@ -7,6 +7,7 @@ import marioyoshi from "./marioyoshi.png"
 export const GameList = (props) => {
     const { games, getGames, deleteGame } = useContext(GameContext)
     const history = useHistory()
+    const currentUser = localStorage.getItem("lu_token") // can we even do this still?
 
     useEffect(() => {
         getGames()
@@ -41,10 +42,19 @@ export const GameList = (props) => {
                                         }
                                     </div>
                                 <div className="game__edit">
-                                    <button className="btn btn-3"
-                                    onClick={() => history.push(`/games/${game.id}/edit`) }>Edit</button>
-                                    <button className="btn btn-4"
-                                    onClick={() => deleteGame(game.id) }>Delete</button>
+                                    {
+                                        game.owner
+                                        ? <button className="btn btn-3"
+                                          onClick={() => history.push(`/games/${game.id}/edit`) }>Edit</button>
+                                        : <></>
+                                    }
+                                    {
+                                        game.owner
+                                        ? <button className="btn btn-4"
+                                          onClick={() => deleteGame(game.id) }>Delete</button>
+                                        : <></>
+                                    }
+                                    
                                 </div>
                                 </section>
                                 <br></br>

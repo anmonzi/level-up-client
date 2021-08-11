@@ -135,7 +135,7 @@ export const EventForm = () => {
           </button>
           <button
             onClick={() => history.push("/games")}
-            className="btn btn-2 btn-sep icon-create"
+            className="btn btn-3 btn-sep icon-create"
           >
             Go Back
           </button>

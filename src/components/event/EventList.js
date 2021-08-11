@@ -5,7 +5,7 @@ import "./Event.css"
 import marioyoshi from '../game/marioyoshi.png'
 
 export const EventList = (props) => {
-    const { events, getEvents, joinEvent, leaveEvent } = useContext(EventContext)
+    const { events, getEvents, joinEvent, leaveEvent, deleteEvent } = useContext(EventContext)
     const history = useHistory()
 
     useEffect(() => {
@@ -59,6 +59,12 @@ export const EventList = (props) => {
                         onClick={() =>  leaveEvent(event.id)}>Leave</button>
                       : <button className="btn btn-2"
                         onClick={() =>  joinEvent(event.id)}>Join</button>
+                  }
+                  {
+                    event.owner
+                    ? <button className="btn btn-4"
+                      onClick={() => deleteEvent(event.id)}>Delete</button>
+                    : <></>
                   }
                 </section>
                 <br></br>

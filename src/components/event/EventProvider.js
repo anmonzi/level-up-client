@@ -48,13 +48,23 @@ export const EventProvider = (props) => {
         .then(getEvents)
     }
 
+    const deleteEvent = eventId => {
+        return fetch(`http://localhost:8000/events/${eventId}`, {
+            method: "DELETE",
+            headers:{
+                "Authorization": `Token ${localStorage.getItem("lu_token")}`
+            }
+        })
+        .then(getEvents)
+    }
+
 
     return (
         <EventContext.Provider value={
             {
                 events, getEvents,
                 createEvent, joinEvent,
-                leaveEvent
+                leaveEvent, deleteEvent
             }
         }>
             {props.children}

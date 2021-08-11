@@ -22,14 +22,14 @@ export const Profile = () => {
                         <h3>Your info</h3>
                     </header>
                     <div className="profile__name">
-                        Welcome: {profile.gamer && profile.gamer.user.first_name} {profile.gamer && profile.gamer.user.last_name}
+                        Welcome: {profile.gamer?.user.first_name} {profile.gamer && profile.gamer.user.last_name}
                     </div>
-                    <div className="profile__username">Username: {profile.gamer && profile.gamer.user.username}</div>
+                    <div className="profile__username">Username: {profile.gamer?.user.username}</div>
                     <div className="profile__bio">About you: {profile.gamer && profile.gamer.bio}</div>
                 </section>
                 <section className="profile__registrations">
                     <header className="registrations__header">
-                        <h3>Your Events</h3>
+                        <h3>Your Upcoming Events</h3>
                     </header>
                     <div className="registrations">
                         {
@@ -44,8 +44,7 @@ export const Profile = () => {
                                                 year: "numeric",
                                                 month: "long",
                                                 day: "numeric",
-                                                })}
-                                                @ {event.time}
+                                                })} @ {event.time}
                                         </div>
                                     </div>
                                     <br></br>
