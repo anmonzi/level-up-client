@@ -11,3 +11,9 @@
     border-radius: 7rem;
     margin-bottom: 5rem;
 }
+
+.profile__info {
+    background: gold;
+    border-radius: 5rem;
+    padding: 0 3rem;
+}

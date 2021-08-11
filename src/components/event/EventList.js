@@ -42,8 +42,7 @@ export const EventList = (props) => {
                       year: "numeric",
                       month: "long",
                       day: "numeric",
-                    })}
-                    @ {event.time}
+                    })} @ {event.time}
                   </div>
                   <div>Organized by: {event.organizer.user.first_name}</div>
                   {
