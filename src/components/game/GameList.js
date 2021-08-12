@@ -2,8 +2,9 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import { GameContext } from './GameProvider'
 import { GameSearch } from './GameSearch'
-import "./Game.css"
 import marioyoshi from "./marioyoshi.png"
+import Draggable, { DraggableCore } from 'react-draggable'
+import "./Game.css"
 
 export const GameList = (props) => {
     const { games, getGames, deleteGame, searchTerms, setSearchTerms } = useContext(GameContext)
@@ -37,12 +38,22 @@ export const GameList = (props) => {
                             }}>Register New Game</button>
                     </header>
                     <br></br>
+                    <div>
+                        <a className="tab" onClick={(event) => {
+                            event.preventDefault()
+                            getGames("skill")
+                            }}
+                            href="#" data-text="Skill level">
+                            <span>Show Easiest</span>
+                        </a>
+                    </div>
                     <GameSearch />
                     <br></br>
                     <article className="games">
                         {
                             filteredGames.map(game => 
                                 <>
+                                <Draggable>
                                 <section key={`game--${game.id}`} className="game">
                                     <div className="game__title">{game.title}</div>
                                     <div className="game__players">{game.number_of_players} players needed</div>
@@ -70,6 +81,7 @@ export const GameList = (props) => {
                                     
                                 </div>
                                 </section>
+                                </Draggable>
                                 <br></br>
                                 </>
                             )

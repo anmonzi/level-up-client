@@ -10,6 +10,7 @@
     padding: 0 8rem;
     border-radius: 7rem;
     margin-bottom: 5rem;
+    max-width: 40%;
 }
 
 .eventForm {

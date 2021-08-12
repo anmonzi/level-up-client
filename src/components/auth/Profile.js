@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { ProfileContext } from './ProfileProvider'
+import Draggable, { DraggableCore } from 'react-draggable'
 import "./Profile.css"
 
 
@@ -12,6 +13,7 @@ export const Profile = () => {
 
 
     return (
+        <Draggable>
         <div className="profile">
             <article className="profile-container">
                 <header>
@@ -55,5 +57,6 @@ export const Profile = () => {
                 </section>
             </article>
         </div>
+        </Draggable>
     )
 }
