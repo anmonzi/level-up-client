@@ -8,7 +8,7 @@ export const GameProvider = (props) => {
     const [searchTerms, setSearchTerms] = useState("")
 
     const getGames = (sortBy=null) => {
-        return fetch(`http://localhost:8000/games${sortBy === null ? "" : `?sortBy=${sortBy}`}`, {
+        return fetch(`https://levelup-server.herokuapp.com/games${sortBy === null ? "" : `?sortBy=${sortBy}`}`, {
             headers:{
                 "Authorization": `Token ${localStorage.getItem("lu_token")}`
             }
@@ -18,7 +18,7 @@ export const GameProvider = (props) => {
     }
 
     const getGameTypes = () => {
-        return fetch("http://localhost:8000/gametypes", {
+        return fetch("https://levelup-server.herokuapp.com/gametypes", {
             headers:{
                 "Authorization": `Token ${localStorage.getItem("lu_token")}`
             }
@@ -28,7 +28,7 @@ export const GameProvider = (props) => {
     }
 
     const getGameById = gameId => {
-        return fetch(`http://localhost:8000/games/${gameId}`, {
+        return fetch(`https://levelup-server.herokuapp.com/games/${gameId}`, {
             headers:{
                 "Authorization": `Token ${localStorage.getItem("lu_token")}`
             }
@@ -37,7 +37,7 @@ export const GameProvider = (props) => {
     }
 
     const createGame = gameObj => {
-        return fetch("http://localhost:8000/games", {
+        return fetch("https://levelup-server.herokuapp.com/games", {
             method: "POST",
             headers:{
                 "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export const GameProvider = (props) => {
     }
 
     const editGame = game => {
-        return fetch(`http://localhost:8000/games/${game.id}`, {
+        return fetch(`https://levelup-server.herokuapp.com/games/${game.id}`, {
             method: "PUT",
             headers:{
                 "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export const GameProvider = (props) => {
     }
 
     const deleteGame = gameId => {
-        return fetch(`http://localhost:8000/games/${gameId}`, {
+        return fetch(`https://levelup-server.herokuapp.com/games/${gameId}`, {
             method: "DELETE",
             headers:{
                 "Authorization": `Token ${localStorage.getItem("lu_token")}`
